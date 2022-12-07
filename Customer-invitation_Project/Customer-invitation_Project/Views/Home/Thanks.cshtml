@@ -1,0 +1,46 @@
+﻿@model Customer_invitation_Project.Models.Answer
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="text-center">
+    <div>
+        <h1>
+            Thanks for information
+            @Model.Name @Model.Lastname
+        </h1>
+
+        <h2>
+            @if (Model.ComeorNot == true)
+            {
+                @:Thank you for joining the invitation.It will be so nice to see you :)
+            }
+            else
+            {
+                @: Thanks for the feedback :(
+            }
+        </h2>
+    </div>
+
+    Please click to view the participants
+    <a asp-action="ListAnswer">All participants</a>
+
+    <br />
+    <br />
+    Click here to add a new participant
+    <a asp-action="AnswerForm">Click here</a>
+
+
+
+</body>
+</html>

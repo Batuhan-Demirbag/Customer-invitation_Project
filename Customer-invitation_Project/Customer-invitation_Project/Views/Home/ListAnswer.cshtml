@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Customer_invitation_Project.Models.Answer>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Participants</title>
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="text-center p-2">
+
+        <h1>Participants of the invitation</h1>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Lastname </th>
+                    <th> Email </th>
+                    <th> Phone </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (Customer_invitation_Project.Models.Answer item in Model)
+                {
+                    <tr>
+                        <td> @item.Name</td>
+                        <td> @item.Lastname</td>
+                        <td> @item.Email</td>
+                        <td> @item.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

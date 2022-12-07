@@ -1,0 +1,54 @@
+﻿@model Customer_invitation_Project.Models.Answer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AnswerForm</title>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2 "> Answer Form</h5>
+    <form asp-action="AnswerForm" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" class="form-control"/>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Lastname">Lastname:</label>
+            <input asp-for="Lastname" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone">Phone:</label>
+            <input asp-for="Phone" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>Are you coming to the invitation?</label>
+            <select asp-for="ComeorNot" class="form-control">
+                <option value="">Please Choose!</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>
